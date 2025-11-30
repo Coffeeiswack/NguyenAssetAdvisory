@@ -1,0 +1,3709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Modern Asset Advisory | Financial Services for Modern Investors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #06ffa5;
+            --primary-dark: #05d98e;
+            --dark: #0a0a0a;
+            --dark-secondary: #1a1a1a;
+            --light: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            line-height: 1.6;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+        h4 { font-size: 1.25rem; }
+
+        p { font-size: 1rem; color: var(--gray-600); }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(6, 255, 165, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--dark);
+            border: 2px solid var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark);
+            color: var(--light);
+        }
+
+        .btn-dark {
+            background: var(--dark);
+            color: var(--light);
+        }
+
+        .btn-dark:hover {
+            background: var(--dark-secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(250, 250, 250, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 0.75rem 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--dark);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .dropdown-toggle svg {
+            width: 12px;
+            height: 12px;
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-toggle svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -1rem;
+            min-width: 220px;
+            padding: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-xl);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: var(--gray-100);
+            color: var(--dark);
+            padding-left: 2rem;
+        }
+
+        .nav-cta {
+            padding: 0.75rem 1.5rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 0.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 999;
+            padding: 6rem 2rem 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-family: var(--font-display);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 50%, #e8f5f0 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            mask-image: linear-gradient(to left, rgba(0,0,0,0.3) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.3) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(transparent, var(--light));
+            pointer-events: none;
+        }
+        
+        .hero-bg-shape {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(6, 255, 165, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-bg-shape-2 {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(6, 255, 165, 0.1);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .hero h1 {
+            max-width: 900px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--primary-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--gray-200);
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-top: 0.5rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-dark {
+            background: var(--dark);
+            color: var(--light);
+        }
+
+        .section-dark p {
+            color: var(--gray-400);
+        }
+
+        .section-gray {
+            background: var(--gray-100);
+            position: relative;
+        }
+        
+        .section-gray.pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header p {
+            margin-top: 1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(6, 255, 165, 0.1);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h4 {
+            margin-bottom: 1rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            font-size: 0.9375rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--primary-dark);
+            gap: 1rem;
+        }
+
+        /* About Preview */
+        .about-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gray-200) 0%, var(--gray-300) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            right: -2rem;
+            bottom: -2rem;
+            border: 2px solid var(--primary);
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+
+        .about-content .btn {
+            margin-top: 1.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--gray-200);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-family: var(--font-display);
+            font-size: 6rem;
+            color: var(--primary);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .testimonial-stars {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.0625rem;
+            font-style: italic;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-section h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta-section p {
+            color: var(--dark);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .cta-section .btn {
+            position: relative;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 5rem 2rem 2rem;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.05;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-brand p {
+            color: var(--gray-400);
+            margin: 1rem 0 1.5rem;
+            max-width: 300px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-secondary);
+            color: var(--gray-400);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .footer h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            font-size: 0.9375rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--dark-secondary);
+            border: 1px solid var(--gray-600);
+            color: var(--light);
+            margin-bottom: 0.75rem;
+            font-family: var(--font-body);
+        }
+
+        .footer-newsletter input::placeholder {
+            color: var(--gray-500);
+        }
+
+        .footer-newsletter .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary);
+        }
+
+        /* Page Headers */
+        .page-header {
+            padding: 10rem 2rem 4rem;
+            background: var(--gradient-purple);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            mix-blend-mode: overlay;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'%3E%3Cpath d='M0 50h100M50 0v100'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Service-specific hero variants */
+        .page-header.service-hero-crypto {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        .page-header.service-hero-crypto::before {
+            background-image: url('https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=1600&q=80');
+        }
+
+        .page-header.service-hero-realestate {
+            background: linear-gradient(135deg, #364152 0%, #4b5563 40%, #9ca3af 100%);
+        }
+        .page-header.service-hero-realestate::before {
+            background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600&q=80');
+        }
+
+        .page-header.service-hero-business {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #4b5563 100%);
+        }
+        .page-header.service-hero-business::before {
+            background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80');
+        }
+
+        .page-header.service-hero-gaming {
+            background: linear-gradient(135deg, #111827 0%, #1e293b 40%, #0f172a 100%);
+        }
+        .page-header.service-hero-gaming::before {
+            background-image: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1600&q=80');
+        }
+
+        .page-header.service-hero-personal {
+            background: linear-gradient(135deg, #0f766e 0%, #0891b2 50%, #22c55e 100%);
+        }
+        .page-header.service-hero-personal::before {
+            background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80');
+        }
+
+        .page-header h1 {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            position: relative;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.125rem;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 1rem 2rem;
+            background: var(--gray-100);
+            font-size: 0.875rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--gray-500);
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--primary-dark);
+        }
+
+        .breadcrumbs span {
+            color: var(--gray-400);
+            margin: 0 0.5rem;
+        }
+
+        .breadcrumbs .current {
+            color: var(--dark);
+        }
+
+        /* Content with Sidebar */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 4rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-card.highlight {
+            background: rgba(6, 255, 165, 0.05);
+            border-color: var(--primary);
+        }
+
+        .sidebar-card h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            right: 80px;
+            height: 2px;
+            background: var(--gray-200);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            flex: 1;
+        }
+
+        .process-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .process-step h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .process-step p {
+            font-size: 0.875rem;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .benefits-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-icon svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* FAQ Accordion */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid var(--gray-200);
+            margin-bottom: 1rem;
+            background: white;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: var(--gray-100);
+        }
+
+        .faq-question svg {
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        /* Blog Cards */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .blog-image {
+            aspect-ratio: 16/10;
+            background: var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-card.featured .blog-image {
+            aspect-ratio: auto;
+            min-height: 300px;
+        }
+
+        .blog-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover h3 {
+            color: var(--primary-dark);
+        }
+
+        .blog-card p {
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-link {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            padding: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--gray-300);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tab:hover {
+            border-color: var(--dark);
+            color: var(--dark);
+        }
+
+        .filter-tab.active {
+            background: var(--dark);
+            border-color: var(--dark);
+            color: var(--light);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        .page-btn {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid var(--gray-300);
+            font-family: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .page-btn:hover {
+            border-color: var(--dark);
+        }
+
+        .page-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Contact Cards */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: rgba(6, 255, 165, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            font-size: 0.9375rem;
+        }
+
+        /* Contact Form */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group label span {
+            color: var(--primary-dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray-300);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(6, 255, 165, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--gray-400);
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .calendar-placeholder {
+            background: rgba(6, 255, 165, 0.05);
+            border: 2px dashed var(--primary);
+            padding: 2rem;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .calendar-placeholder h4 {
+            margin-bottom: 1rem;
+        }
+
+        /* Credentials Grid */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .credential-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .credential-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .credential-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .credential-card h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: var(--gradient-purple);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.1;
+            mix-blend-mode: overlay;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            text-align: center;
+            color: white;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .value-card h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-card p {
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Resources Sidebar */
+        .resource-card {
+            border: 1px solid var(--primary);
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .resource-card:hover {
+            background: rgba(6, 255, 165, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Blog Article Styles */
+        .blog-article {
+            padding: 4rem 2rem;
+            background: white;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 2rem;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 12px;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+        
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--gray-100);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            background: var(--gray-200);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        
+        /* Calculator Styles */
+        .calculator-container {
+            background: var(--gray-100);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .calc-row.full {
+            grid-template-columns: 1fr;
+        }
+        
+        .calc-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .calc-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .calc-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .calc-result {
+            background: var(--dark);
+            color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .calc-result-label {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-bottom: 0.5rem;
+        }
+        
+        .calc-result-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        .calc-result-value.negative {
+            color: #ef4444;
+        }
+        
+        .calc-result-value.positive {
+            color: var(--primary);
+        }
+        
+        .calc-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            border: none;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .calc-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Guide Download Card */
+        .guide-preview {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .guide-cover {
+            width: 120px;
+            height: 160px;
+            background: var(--gradient-purple);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            flex-shrink: 0;
+        }
+        
+        .guide-info h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .guide-info p {
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+        
+        .guide-features {
+            list-style: none;
+        }
+        
+        .guide-features li {
+            font-size: 0.875rem;
+            padding: 0.25rem 0;
+            color: var(--gray-600);
+        }
+        
+        .guide-features li::before {
+            content: '✓ ';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .download-form .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .blog-article-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .article-hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            margin-bottom: 3rem;
+            border-radius: 8px;
+        }
+        
+        .article-content {
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+        }
+        
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.375rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-600);
+            font-size: 1.0625rem;
+        }
+        
+        .article-lead {
+            font-size: 1.25rem !important;
+            color: var(--dark) !important;
+            font-weight: 500;
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem !important;
+        }
+        
+        .article-callout {
+            background: rgba(6, 255, 165, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .article-callout.warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-left-color: #f59e0b;
+        }
+        
+        .article-callout h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .article-callout p {
+            margin-bottom: 0 !important;
+        }
+        
+        .article-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+        }
+        
+        .article-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .article-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .article-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.1rem;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .article-cta {
+            background: var(--gray-100);
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .article-cta h3 {
+            margin-bottom: 0.75rem !important;
+            margin-top: 0 !important;
+        }
+        
+        .article-cta p {
+            margin-bottom: 1.5rem !important;
+        }
+        
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--gray-100);
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            flex-shrink: 0;
+        }
+        
+        .author-info h4 {
+            font-family: var(--font-body);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9375rem !important;
+            margin-bottom: 0 !important;
+        }
+        
+        .article-nav {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .comparison-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: var(--gray-100);
+        }
+
+        /* Page Visibility */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .about-preview,
+            .content-layout,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image::after {
+                display: none;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .credentials-grid,
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: auto;
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .credentials-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-tabs {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">Nguyen<span>.</span></a>
+            <div class="nav-links">
+                <a href="#" class="nav-link active" data-page="home" onclick="showPage('home')">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Services
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" onclick="showPage('service', 'crypto')">Crypto Tax</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('service', 'realestate')">Real Estate</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('service', 'business')">Small Business</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('service', 'gaming')">Gaming Tax</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('service', 'personal')">Personal Finance</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link" data-page="about" onclick="showPage('about')">About</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Resources
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" onclick="showPage('blog')">Blog & Insights</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('blog')">Tax Guides</a>
+                        <a href="#" class="dropdown-item" onclick="showPage('blog')">Calculators</a>
+                    </div>
+                </div>
+                <a href="https://app.taxdome.com" target="_blank" class="nav-link">Client Portal</a>
+                <a href="#" class="btn btn-primary nav-cta" onclick="showPage('contact')">Contact</a>
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="mobile-nav-link" onclick="showPage('home'); toggleMobileMenu()">Home</a>
+        <a href="#" class="mobile-nav-link" onclick="showPage('service', 'crypto'); toggleMobileMenu()">Services</a>
+        <a href="#" class="mobile-nav-link" onclick="showPage('about'); toggleMobileMenu()">About</a>
+        <a href="#" class="mobile-nav-link" onclick="showPage('blog'); toggleMobileMenu()">Resources</a>
+        <a href="https://app.taxdome.com" target="_blank" class="mobile-nav-link">Client Portal</a>
+        <a href="#" class="btn btn-primary" style="margin-top: 2rem; width: 100%; justify-content: center;" onclick="showPage('contact'); toggleMobileMenu()">Contact Us</a>
+    </div>
+
+    <!-- Homepage -->
+    <div id="page-home" class="page active">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg-shape"></div>
+            <div class="hero-bg-shape-2"></div>
+            <div class="hero-container">
+                <div class="hero-eyebrow">Modern Financial Advisory</div>
+                <h1>We get it all—your crypto, your rentals, your business, and your <em>401k</em></h1>
+                <p class="hero-subtitle">Comprehensive financial services designed for modern investors who need an advisor that understands today's diverse portfolio.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary" onclick="showPage('contact')">Schedule Consultation</a>
+                    <a href="#" class="btn btn-secondary" onclick="showPage('about')">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Clients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">$50M+</div>
+                        <div class="stat-label">Assets Managed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section section-gray pattern">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p>Specialized expertise across the full spectrum of modern financial needs</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">₿</div>
+                        <h4>Crypto Tax</h4>
+                        <p>Navigate the complex world of cryptocurrency taxation with expert guidance on reporting, compliance, and optimization strategies.</p>
+                        <a href="#" class="service-link" onclick="showPage('service', 'crypto')">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h4>Real Estate</h4>
+                        <p>Maximize your property investments with comprehensive tax planning, 1031 exchanges, and rental income optimization.</p>
+                        <a href="#" class="service-link" onclick="showPage('service', 'realestate')">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💼</div>
+                        <h4>Small Business</h4>
+                        <p>From entity selection to tax strategy, we help small business owners minimize liability and maximize growth potential.</p>
+                        <a href="#" class="service-link" onclick="showPage('service', 'business')">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎮</div>
+                        <h4>Gaming Tax</h4>
+                        <p>Specialized tax services for esports professionals, streamers, and gaming content creators.</p>
+                        <a href="#" class="service-link" onclick="showPage('service', 'gaming')">Learn More →</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h4>Personal Finance</h4>
+                        <p>Comprehensive personal financial planning including retirement, investments, and tax-efficient wealth building.</p>
+                        <a href="#" class="service-link" onclick="showPage('service', 'personal')">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Preview -->
+        <section class="section">
+            <div class="container">
+                <div class="about-preview">
+                    <div class="about-image">
+                        <div class="about-image-wrapper">
+                            <div class="about-image-placeholder" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80') center/cover no-repeat;"></div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2>Meet Long Nguyen, CPA</h2>
+                        <p>With over 15 years of experience in public accounting and a passion for helping modern investors navigate complex financial landscapes, I founded Nguyen Modern Asset Advisory to bridge the gap between traditional accounting and today's diverse investment opportunities.</p>
+                        <p>Whether you're a crypto trader, real estate investor, small business owner, or all of the above—I understand your unique challenges and have the expertise to help you thrive.</p>
+                        <a href="#" class="btn btn-secondary" onclick="showPage('about')">About Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section section-gray pattern">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Client Success Stories</h2>
+                    <p>Hear from clients who've transformed their financial outlook</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Long saved me thousands on my crypto taxes. He actually understands DeFi, NFTs, and all the complex transactions that other CPAs just don't get."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">MK</div>
+                            <div>
+                                <div class="testimonial-name">Michael K.</div>
+                                <div class="testimonial-role">Crypto Investor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"Finally, a CPA who speaks my language. Managing 5 rental properties used to be a tax nightmare—now it's streamlined and optimized."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SR</div>
+                            <div>
+                                <div class="testimonial-name">Sarah R.</div>
+                                <div class="testimonial-role">Real Estate Investor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"As a full-time streamer, my income situation is complicated. Long set up the perfect business structure and helps me stay on top of quarterly taxes."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JT</div>
+                            <div>
+                                <div class="testimonial-name">Jason T.</div>
+                                <div class="testimonial-role">Content Creator</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready for a Financial Advisor Who Gets It?</h2>
+                <p>Schedule a free consultation to discuss your unique financial situation</p>
+                <a href="#" class="btn btn-dark" onclick="showPage('contact')">Schedule Free Consultation</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Service Page -->
+    <div id="page-service" class="page">
+        <div class="page-header service-hero-crypto" id="service-header">
+            <h1 id="service-title">Crypto Tax Services</h1>
+            <p id="service-subtitle">Comprehensive tax and accounting solutions for cryptocurrency investors</p>
+        </div>
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="#" onclick="showPage('home')">Home</a>
+                <span>›</span>
+                <span>Services</span>
+                <span>›</span>
+                <span class="current" id="service-breadcrumb">Crypto Tax</span>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="content-layout">
+                    <div class="main-content">
+                        <h2>What We Offer</h2>
+                        <p id="service-description">Our crypto tax services cover every aspect of digital asset taxation, from basic Bitcoin trades to complex DeFi interactions, staking rewards, airdrops, and NFT transactions. We stay current with the rapidly evolving regulatory landscape to ensure your compliance and optimization.</p>
+                        
+                        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Our Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="process-number">1</div>
+                                <h4>Discovery</h4>
+                                <p>We review your complete transaction history and financial goals</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">2</div>
+                                <h4>Analysis</h4>
+                                <p>Our team identifies optimization opportunities and compliance needs</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">3</div>
+                                <h4>Execution</h4>
+                                <p>We implement strategies and handle all filing requirements</p>
+                            </div>
+                        </div>
+
+                        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Benefits</h3>
+                        <ul class="benefits-list" id="service-benefits">
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Expert Knowledge</strong>
+                                    <p style="margin-top: 0.25rem;">Deep expertise in cryptocurrency taxation and regulatory compliance</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Tax Optimization</strong>
+                                    <p style="margin-top: 0.25rem;">Strategic planning to minimize your tax liability legally</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Peace of Mind</strong>
+                                    <p style="margin-top: 0.25rem;">Full compliance with IRS requirements and audit support</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="benefit-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                        <path d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Ongoing Support</strong>
+                                    <p style="margin-top: 0.25rem;">Year-round guidance and quarterly planning sessions</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3 style="margin-top: 3rem; margin-bottom: 1rem;">Pricing</h3>
+                        <p>Our pricing is transparent and based on the complexity of your situation. Schedule a consultation for a personalized quote.</p>
+                        <div style="margin-top: 2rem; padding: 2rem; background: var(--gray-100); border-left: 4px solid var(--primary);">
+                            <p style="font-size: 1.125rem; color: var(--dark);"><strong>Starting at $500</strong> for basic crypto tax preparation</p>
+                            <p style="margin-top: 0.5rem;">Complex portfolios and advisory services priced individually</p>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar-card highlight">
+                            <h4>Quick Actions</h4>
+                            <a href="#" class="btn btn-primary" style="width: 100%; margin-bottom: 0.75rem; justify-content: center;" onclick="showPage('contact')">Schedule Consultation</a>
+                            <a href="#" class="btn btn-secondary" style="width: 100%; justify-content: center;">Download Guide</a>
+                        </div>
+                        <div class="sidebar-card">
+                            <h4>Related Resources</h4>
+                            <div class="resource-card" onclick="openGuideModal('crypto')">
+                                <span class="resource-icon">📘</span>
+                                <span>2025 Crypto Tax Guide</span>
+                            </div>
+                            <div class="resource-card" onclick="openCalculator('crypto')">
+                                <span class="resource-icon">🧮</span>
+                                <span>Gain/Loss Calculator</span>
+                            </div>
+                            <div class="resource-card" onclick="showPage('blog-crypto-guide')">
+                                <span class="resource-icon">📄</span>
+                                <span>IRS Form 8949 Explained</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-card">
+                            <h4>Contact Info</h4>
+                            <p style="margin-bottom: 0.5rem;"><strong>📞 Phone</strong></p>
+                            <p>(555) 123-4567</p>
+                            <p style="margin-top: 1rem; margin-bottom: 0.5rem;"><strong>📧 Email</strong></p>
+                            <p>long@nguyenadvisory.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-list" id="service-faq">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Do I need to report all my crypto transactions?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, the IRS requires reporting of all cryptocurrency transactions, including trades, conversions, income, and disposals. Even if you didn't cash out to USD, taxable events may have occurred.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            What records do I need to provide?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We'll need transaction history from all exchanges and wallets, records of any crypto received as income, and documentation of cost basis for your holdings. We can help you export this data from most platforms.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Can you help with previous years' unfiled taxes?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. We specialize in helping clients become compliant with past crypto tax obligations. We can file amended returns and work with you on voluntary disclosure if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <p>Schedule a free consultation to discuss your needs</p>
+                <a href="#" class="btn btn-dark" onclick="showPage('contact')">Schedule Free Consultation</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="page-about" class="page">
+        <div class="page-header">
+            <h1>About Long Nguyen</h1>
+            <p>Modern financial expertise with a personal touch</p>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="about-preview">
+                    <div class="about-image">
+                        <div class="about-image-wrapper">
+                            <div class="about-image-placeholder" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&q=80') center/cover no-repeat;"></div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2>Hello, I'm Long</h2>
+                        <p>I'm a Certified Public Accountant with over 15 years of experience helping individuals and businesses navigate complex financial landscapes. After graduating from the University of North Texas with a degree in Accounting, I built my career across Big Four accounting, fintech startups, and managing my own diverse investment portfolio.</p>
+                        <p>I founded Nguyen Modern Asset Advisory because I saw a gap in the market—traditional CPAs who didn't understand modern investments like cryptocurrency, and tech-savvy advisors who lacked deep tax expertise.</p>
+                        <p>When I'm not crunching numbers, you'll find me exploring the latest DeFi protocols, analyzing real estate markets, or spending time with my family in Dallas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why I Started This Firm</h2>
+                    <p style="max-width: 800px; margin: 1rem auto 0;">After years of watching friends and colleagues struggle to find CPAs who understood their diverse investment portfolios, I decided to create the firm I wished existed. A place where crypto traders, real estate investors, and small business owners could all find expert guidance under one roof—from someone who actually lives and breathes these asset classes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Credentials & Expertise</h2>
+                </div>
+                <div class="credentials-grid">
+                    <div class="credential-card">
+                        <div class="credential-icon">📜</div>
+                        <h4>CPA License</h4>
+                        <p>State of Texas</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">🎓</div>
+                        <h4>Bachelor's in Accounting</h4>
+                        <p>University of North Texas</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">₿</div>
+                        <h4>Crypto Certified</h4>
+                        <p>Certified Cryptocurrency Expert</p>
+                    </div>
+                    <div class="credential-card">
+                        <div class="credential-icon">📊</div>
+                        <h4>QuickBooks Pro</h4>
+                        <p>Advanced Certified Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header" style="color: white;">
+                    <h2 style="color: white;">What We Stand For</h2>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">💡</div>
+                        <h3>Innovation</h3>
+                        <p>Embracing new technology and staying ahead of industry changes</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h3>Transparency</h3>
+                        <p>Clear, honest communication with no hidden fees or surprises</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon">⭐</div>
+                        <h3>Excellence</h3>
+                        <p>Committed to delivering the best results for every client</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section" style="text-align: center;">
+            <div class="container">
+                <h2>Ready to Work Together?</h2>
+                <p style="margin: 1rem 0 2rem;">Let's discuss how I can help with your financial goals</p>
+                <a href="#" class="btn btn-primary" onclick="showPage('contact')">Schedule Consultation</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="page-blog" class="page">
+        <div class="page-header" style="background: var(--gray-100); padding: 10rem 2rem 3rem;">
+            <h1 style="color: var(--dark);">Resources & Insights</h1>
+            <p style="color: var(--gray-600);">Tax guides, calculators, and expert insights for modern investors</p>
+        </div>
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">All</button>
+            <button class="filter-tab" data-filter="crypto">Crypto</button>
+            <button class="filter-tab" data-filter="real-estate">Real Estate</button>
+            <button class="filter-tab" data-filter="small-business">Small Business</button>
+            <button class="filter-tab" data-filter="personal-finance">Personal Finance</button>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="content-layout">
+                    <div class="main-content">
+                        <!-- Featured -->
+                        <div class="blog-card featured" data-category="crypto">
+                            <div class="blog-image" style="background: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80') center/cover no-repeat;">
+                                <span class="blog-tag">Featured</span>
+                            </div>
+                            <div class="blog-content" style="display: flex; flex-direction: column; justify-content: center;">
+                                <div class="blog-meta">January 15, 2025 • Crypto</div>
+                                <h3 style="font-size: 1.75rem;">The Complete Guide to Crypto Tax Reporting in 2025</h3>
+                                <p>Everything you need to know about the latest IRS requirements, reporting thresholds, and strategies to stay compliant while minimizing your tax burden.</p>
+                                <a href="#" class="blog-link" onclick="showPage('blog-crypto-guide'); return false;">Read More →</a>
+                            </div>
+                        </div>
+
+                        <!-- Grid -->
+                        <div class="blog-grid" style="margin-top: 2rem;">
+                            <div class="blog-card" data-category="real-estate">
+                                <div class="blog-image" style="background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80') center/cover no-repeat;">
+                                    <span class="blog-tag">Real Estate</span>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">January 10, 2025</div>
+                                    <h3>1031 Exchange Strategies for 2025</h3>
+                                    <p>How to defer capital gains and grow your real estate portfolio tax-efficiently.</p>
+                                    <a href="#" class="blog-link" onclick="showPage('blog-1031'); return false;">Read More →</a>
+                                </div>
+                            </div>
+                            <div class="blog-card" data-category="small-business">
+                                <div class="blog-image" style="background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80') center/cover no-repeat;">
+                                    <span class="blog-tag">Small Business</span>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">January 5, 2025</div>
+                                    <h3>LLC vs S-Corp: Which is Right for You?</h3>
+                                    <p>A comprehensive comparison to help you choose the best entity structure.</p>
+                                    <a href="#" class="blog-link" onclick="showPage('blog-llc'); return false;">Read More →</a>
+                                </div>
+                            </div>
+                            <div class="blog-card" data-category="crypto">
+                                <div class="blog-image" style="background: url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=600&q=80') center/cover no-repeat;">
+                                    <span class="blog-tag">Crypto</span>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">December 28, 2024</div>
+                                    <h3>DeFi Tax Implications Explained</h3>
+                                    <p>Understanding yield farming, liquidity pools, and staking from a tax perspective.</p>
+                                    <a href="#" class="blog-link" onclick="showPage('blog-defi'); return false;">Read More →</a>
+                                </div>
+                            </div>
+                            <div class="blog-card" data-category="personal-finance">
+                                <div class="blog-image" style="background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80') center/cover no-repeat;">
+                                    <span class="blog-tag">Personal Finance</span>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">December 20, 2024</div>
+                                    <h3>Year-End Tax Planning Checklist</h3>
+                                    <p>Essential moves to make before December 31st to optimize your tax situation.</p>
+                                    <a href="#" class="blog-link" onclick="showPage('blog-yearend'); return false;">Read More →</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="page-btn">←</button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn">→</button>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar-card">
+                            <h4>Search</h4>
+                            <input type="text" class="form-input" placeholder="Search articles..." id="blogSearch" onkeyup="searchBlog()">
+                        </div>
+                        <div class="sidebar-card" style="background: var(--gray-100);">
+                            <h4>Free Guides</h4>
+                            <div class="resource-card" onclick="openGuideModal('crypto')">
+                                <span class="resource-icon">📘</span>
+                                <span>Crypto Tax Guide 2025</span>
+                            </div>
+                            <div class="resource-card" onclick="openGuideModal('realestate')">
+                                <span class="resource-icon">📗</span>
+                                <span>Real Estate Checklist</span>
+                            </div>
+                            <div class="resource-card" onclick="openGuideModal('business')">
+                                <span class="resource-icon">📙</span>
+                                <span>Small Biz Deductions</span>
+                            </div>
+                        </div>
+                        <div class="sidebar-card highlight">
+                            <h4>Calculators</h4>
+                            <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 0.5rem; justify-content: center;" onclick="openCalculator('crypto'); return false;">Crypto Gain/Loss</a>
+                            <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 0.5rem; justify-content: center;" onclick="openCalculator('roi'); return false;">ROI Calculator</a>
+                            <a href="#" class="btn btn-secondary" style="width: 100%; justify-content: center;" onclick="openCalculator('tax'); return false;">Tax Estimator</a>
+                        </div>
+                        <div class="sidebar-card" style="border: 2px solid #f59e0b;">
+                            <h4>Stay Updated</h4>
+                            <p style="margin-bottom: 1rem;">Get tax tips & insights delivered to your inbox</p>
+                            <input type="email" class="form-input" placeholder="Your email" style="margin-bottom: 0.75rem;">
+                            <button class="btn btn-primary" style="width: 100%; justify-content: center;">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="page-contact" class="page">
+        <div class="page-header">
+            <h1>Let's Talk About Your Financial Future</h1>
+            <p>Schedule a free consultation or send us a message</p>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3>Call Us</h3>
+                        <p style="font-size: 1.25rem; color: var(--dark); margin-bottom: 0.25rem;">(555) 123-4567</p>
+                        <p>Mon-Fri 9AM-5PM CST</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p style="font-size: 1.125rem; color: var(--dark); margin-bottom: 0.25rem;">long@nguyenadvisory.com</p>
+                        <p>Response within 24 hours</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p style="color: var(--dark); margin-bottom: 0.25rem;">Dallas, Texas</p>
+                        <p>By appointment only</p>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <div>
+                        <h2 style="margin-bottom: 1.5rem;">Send Us a Message</h2>
+                        <div class="form-group">
+                            <label>Name <span>*</span></label>
+                            <input type="text" class="form-input" placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email <span>*</span></label>
+                            <input type="email" class="form-input" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="tel" class="form-input" placeholder="(555) 555-5555">
+                        </div>
+                        <div class="form-group">
+                            <label>Service Interested In</label>
+                            <select class="form-input">
+                                <option value="">Select a service...</option>
+                                <option value="crypto">Crypto Tax</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="business">Small Business</option>
+                                <option value="gaming">Gaming Tax</option>
+                                <option value="personal">Personal Finance</option>
+                                <option value="other">Other / Not Sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message <span>*</span></label>
+                            <textarea class="form-input" placeholder="Tell us about your situation and how we can help..."></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+                    </div>
+                    <div>
+                        <h2 style="margin-bottom: 1.5rem;">Schedule a Consultation</h2>
+                        <div class="calendar-placeholder">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📅</div>
+                            <h4>Calendly Integration</h4>
+                            <p style="max-width: 300px;">Embed your Calendly scheduling widget here for direct booking</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 1.5rem;">Book on Calendly</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Common Questions</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            What services do you offer?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer comprehensive financial services including crypto tax preparation, real estate tax planning, small business accounting, gaming/creator tax services, and personal financial planning. Each service is tailored to your specific situation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            What are your fees?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Our fees vary based on the complexity of your situation. Basic tax preparation starts at $500, with more complex services priced accordingly. We always provide a clear quote before beginning work, with no hidden fees.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Do you work with clients remotely?
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! While we're based in Dallas, Texas, we work with clients nationwide via video calls, secure document sharing, and phone consultations. Our technology-forward approach makes remote collaboration seamless.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Article: Crypto Tax Guide -->
+    <div id="page-blog-crypto-guide" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+            <div class="blog-article-meta">
+                <span class="blog-tag" style="background: var(--primary); color: var(--dark);">Crypto</span>
+                <span style="margin-left: 1rem; opacity: 0.8;">January 15, 2025 • 12 min read</span>
+            </div>
+            <h1>The Complete Guide to Crypto Tax Reporting in 2025</h1>
+            <p>Everything you need to know about staying compliant with the latest IRS requirements</p>
+        </div>
+        <article class="blog-article">
+            <div class="container" style="max-width: 800px;">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1200&q=80" alt="Cryptocurrency" class="article-hero-image">
+                
+                <div class="article-content">
+                    <p class="article-lead">The cryptocurrency tax landscape continues to evolve rapidly. With the IRS increasing enforcement and new reporting requirements taking effect, understanding your obligations has never been more important.</p>
+                    
+                    <h2>What's New in 2025</h2>
+                    <p>The IRS has implemented several significant changes for the 2025 tax year that every crypto investor needs to understand. These include expanded reporting requirements for exchanges, new thresholds for Form 1099-DA, and updated guidance on DeFi transactions.</p>
+                    
+                    <p>Perhaps the most significant change is the requirement for centralized exchanges to report customer transactions directly to the IRS. This means the agency will have unprecedented visibility into crypto trading activity.</p>
+                    
+                    <div class="article-callout">
+                        <h4>💡 Key Takeaway</h4>
+                        <p>Starting in 2025, exchanges must report transactions exceeding $600 to the IRS via Form 1099-DA. Ensure your records match what exchanges report.</p>
+                    </div>
+                    
+                    <h2>Taxable Events Explained</h2>
+                    <p>Not every crypto transaction triggers a tax obligation, but many do. Here's what you need to know:</p>
+                    
+                    <ul class="article-list">
+                        <li><strong>Selling crypto for fiat:</strong> Capital gains or losses based on cost basis</li>
+                        <li><strong>Trading one crypto for another:</strong> Treated as a sale, triggering capital gains</li>
+                        <li><strong>Receiving crypto as income:</strong> Taxed as ordinary income at fair market value</li>
+                        <li><strong>Mining rewards:</strong> Income at time of receipt</li>
+                        <li><strong>Staking rewards:</strong> Income when received (though timing is debated)</li>
+                        <li><strong>Airdrops:</strong> Generally taxable as income when received</li>
+                    </ul>
+                    
+                    <h2>Cost Basis Methods</h2>
+                    <p>Choosing the right cost basis method can significantly impact your tax liability. The IRS allows several methods including FIFO (First In, First Out), LIFO (Last In, First Out), and Specific Identification.</p>
+                    
+                    <p>For most investors, Specific Identification offers the most flexibility for tax optimization, but requires meticulous record-keeping. FIFO is the default method and often the simplest to implement.</p>
+                    
+                    <h2>DeFi Considerations</h2>
+                    <p>Decentralized finance presents unique challenges for tax reporting. Yield farming, liquidity provision, and wrapped tokens can create complex taxable events that many investors overlook.</p>
+                    
+                    <p>When you provide liquidity to a pool, you're typically exchanging your tokens for LP tokens—a taxable event. When you remove liquidity, that's another taxable event. The yield you earn is generally treated as income.</p>
+                    
+                    <div class="article-callout warning">
+                        <h4>⚠️ Common Mistake</h4>
+                        <p>Many investors forget that moving tokens between wallets isn't taxable, but bridging to another network often involves a swap and IS taxable.</p>
+                    </div>
+                    
+                    <h2>Record-Keeping Best Practices</h2>
+                    <p>Maintaining accurate records is essential for crypto tax compliance. Here's what you should track for every transaction:</p>
+                    
+                    <ul class="article-list">
+                        <li>Date and time of transaction</li>
+                        <li>Type of transaction (buy, sell, trade, income, etc.)</li>
+                        <li>Amount of crypto involved</li>
+                        <li>Fair market value at time of transaction</li>
+                        <li>Fees paid</li>
+                        <li>Wallet addresses involved</li>
+                        <li>Exchange or platform used</li>
+                    </ul>
+                    
+                    <h2>Getting Professional Help</h2>
+                    <p>Given the complexity of crypto taxation, working with a qualified professional can save you money and stress. Look for a CPA or tax professional with specific cryptocurrency experience who stays current with the rapidly evolving regulations.</p>
+                    
+                    <div class="article-cta">
+                        <h3>Need Help With Your Crypto Taxes?</h3>
+                        <p>Our team specializes in cryptocurrency tax preparation and planning. Schedule a free consultation to discuss your situation.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="article-author">
+                    <div class="author-avatar" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=80') center/cover no-repeat;"></div>
+                    <div class="author-info">
+                        <h4>Long Nguyen, CPA</h4>
+                        <p>Certified cryptocurrency tax specialist with 15+ years of accounting experience. Passionate about helping modern investors navigate complex tax situations.</p>
+                    </div>
+                </div>
+                
+                <div class="article-nav">
+                    <a href="#" class="btn btn-secondary" onclick="showPage('blog'); return false;">← Back to Resources</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Blog Article: 1031 Exchange -->
+    <div id="page-blog-1031" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #2d5016 0%, #3d6b1e 50%, #4a7c23 100%);">
+            <div class="blog-article-meta">
+                <span class="blog-tag" style="background: var(--primary); color: var(--dark);">Real Estate</span>
+                <span style="margin-left: 1rem; opacity: 0.8;">January 10, 2025 • 10 min read</span>
+            </div>
+            <h1>1031 Exchange Strategies for 2025</h1>
+            <p>How to defer capital gains and grow your real estate portfolio tax-efficiently</p>
+        </div>
+        <article class="blog-article">
+            <div class="container" style="max-width: 800px;">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80" alt="Real Estate" class="article-hero-image">
+                
+                <div class="article-content">
+                    <p class="article-lead">The 1031 exchange remains one of the most powerful tax deferral tools available to real estate investors. When executed properly, it allows you to sell investment property and reinvest the proceeds while deferring capital gains taxes indefinitely.</p>
+                    
+                    <h2>Understanding the Basics</h2>
+                    <p>Named after Section 1031 of the Internal Revenue Code, a like-kind exchange allows investors to swap one investment property for another without immediately recognizing capital gains. The key word is "defer"—you're not eliminating taxes, but postponing them.</p>
+                    
+                    <p>The power of this deferral compounds over time. By continually exchanging properties, investors can grow their portfolio's value significantly while keeping their capital working rather than paying it to the IRS.</p>
+                    
+                    <div class="article-callout">
+                        <h4>💡 Key Takeaway</h4>
+                        <p>You have 45 days to identify replacement properties and 180 days to close. These deadlines are strict—missing them disqualifies your exchange.</p>
+                    </div>
+                    
+                    <h2>Qualifying for a 1031 Exchange</h2>
+                    <p>Not all property swaps qualify. Here are the essential requirements:</p>
+                    
+                    <ul class="article-list">
+                        <li><strong>Like-kind property:</strong> Both properties must be held for investment or business use</li>
+                        <li><strong>Equal or greater value:</strong> To defer all gains, replacement property must be equal or greater in value</li>
+                        <li><strong>Qualified intermediary:</strong> A third party must hold the funds during the exchange</li>
+                        <li><strong>Same taxpayer:</strong> The same entity must sell and buy</li>
+                    </ul>
+                    
+                    <h2>Common Strategies</h2>
+                    <p><strong>Trading Up:</strong> The most common strategy involves selling a smaller property and purchasing a larger one. This allows you to consolidate management while deferring taxes on your gains.</p>
+                    
+                    <p><strong>Diversification:</strong> Sell one large property and purchase multiple smaller ones. This can reduce risk and improve cash flow diversification.</p>
+                    
+                    <p><strong>Geographic Relocation:</strong> Move your investment from a market you're bearish on to one with better growth prospects, all while deferring taxes.</p>
+                    
+                    <h2>2025 Considerations</h2>
+                    <p>Recent legislative discussions have included proposals to limit or eliminate 1031 exchanges. While no changes have been enacted, investors should stay informed about potential legislative developments.</p>
+                    
+                    <p>Additionally, rising interest rates have impacted the real estate market, affecting both property values and financing options. Work with your team to evaluate whether current market conditions support your exchange strategy.</p>
+                    
+                    <div class="article-cta">
+                        <h3>Planning a 1031 Exchange?</h3>
+                        <p>Our team can help you structure your exchange for maximum tax efficiency. Schedule a consultation to discuss your options.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="article-author">
+                    <div class="author-avatar" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=80') center/cover no-repeat;"></div>
+                    <div class="author-info">
+                        <h4>Long Nguyen, CPA</h4>
+                        <p>Certified cryptocurrency tax specialist with 15+ years of accounting experience. Passionate about helping modern investors navigate complex tax situations.</p>
+                    </div>
+                </div>
+                
+                <div class="article-nav">
+                    <a href="#" class="btn btn-secondary" onclick="showPage('blog'); return false;">← Back to Resources</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Blog Article: LLC vs S-Corp -->
+    <div id="page-blog-llc" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #3d7ab5 100%);">
+            <div class="blog-article-meta">
+                <span class="blog-tag" style="background: var(--primary); color: var(--dark);">Small Business</span>
+                <span style="margin-left: 1rem; opacity: 0.8;">January 5, 2025 • 8 min read</span>
+            </div>
+            <h1>LLC vs S-Corp: Which is Right for You?</h1>
+            <p>A comprehensive comparison to help you choose the best entity structure</p>
+        </div>
+        <article class="blog-article">
+            <div class="container" style="max-width: 800px;">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80" alt="Business Planning" class="article-hero-image">
+                
+                <div class="article-content">
+                    <p class="article-lead">Choosing the right business structure is one of the most important decisions an entrepreneur makes. The choice between an LLC and an S-Corp can have significant implications for taxes, liability protection, and administrative burden.</p>
+                    
+                    <h2>LLC Overview</h2>
+                    <p>A Limited Liability Company (LLC) provides liability protection while offering flexibility in taxation. By default, single-member LLCs are taxed as sole proprietorships, while multi-member LLCs are taxed as partnerships.</p>
+                    
+                    <p>The main advantage of an LLC is simplicity. There are minimal formalities, no required annual meetings, and the flexibility to distribute profits in any ratio agreed upon by members.</p>
+                    
+                    <h2>S-Corp Overview</h2>
+                    <p>An S-Corporation is a tax election that can be made by an LLC or a traditional corporation. It allows business income to pass through to shareholders while potentially reducing self-employment taxes.</p>
+                    
+                    <p>The key benefit of S-Corp taxation is the ability to split income between salary and distributions. Only the salary portion is subject to self-employment taxes (Social Security and Medicare).</p>
+                    
+                    <div class="article-callout">
+                        <h4>💡 Key Takeaway</h4>
+                        <p>The S-Corp election typically makes sense when your net business income exceeds $50,000-$70,000 annually. Below that, the administrative costs may outweigh the tax savings.</p>
+                    </div>
+                    
+                    <h2>Side-by-Side Comparison</h2>
+                    
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Factor</th>
+                            <th>LLC</th>
+                            <th>S-Corp</th>
+                        </tr>
+                        <tr>
+                            <td>Self-Employment Tax</td>
+                            <td>All profits subject to SE tax</td>
+                            <td>Only salary subject to SE tax</td>
+                        </tr>
+                        <tr>
+                            <td>Administrative Burden</td>
+                            <td>Minimal requirements</td>
+                            <td>Payroll, reasonable salary, more formalities</td>
+                        </tr>
+                        <tr>
+                            <td>Flexibility</td>
+                            <td>High flexibility in distributions</td>
+                            <td>Must follow ownership percentages</td>
+                        </tr>
+                        <tr>
+                            <td>Cost</td>
+                            <td>Lower ongoing costs</td>
+                            <td>Higher due to payroll requirements</td>
+                        </tr>
+                    </table>
+                    
+                    <h2>Making the Right Choice</h2>
+                    <p>Consider the S-Corp election if you have consistent profits exceeding $50,000-$70,000 annually, are willing to run payroll, can justify a reasonable salary, and want to reduce self-employment taxes.</p>
+                    
+                    <p>Stick with standard LLC taxation if your income is variable or lower, you want maximum simplicity, you need flexibility in profit distributions, or you're just starting out.</p>
+                    
+                    <div class="article-cta">
+                        <h3>Need Help Choosing?</h3>
+                        <p>Every business is unique. Schedule a consultation to discuss which structure makes sense for your specific situation.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="article-author">
+                    <div class="author-avatar" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=80') center/cover no-repeat;"></div>
+                    <div class="author-info">
+                        <h4>Long Nguyen, CPA</h4>
+                        <p>Certified cryptocurrency tax specialist with 15+ years of accounting experience. Passionate about helping modern investors navigate complex tax situations.</p>
+                    </div>
+                </div>
+                
+                <div class="article-nav">
+                    <a href="#" class="btn btn-secondary" onclick="showPage('blog'); return false;">← Back to Resources</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Blog Article: DeFi Tax -->
+    <div id="page-blog-defi" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #4a1a6b 0%, #6b2d8a 50%, #8a3daa 100%);">
+            <div class="blog-article-meta">
+                <span class="blog-tag" style="background: var(--primary); color: var(--dark);">Crypto</span>
+                <span style="margin-left: 1rem; opacity: 0.8;">December 28, 2024 • 11 min read</span>
+            </div>
+            <h1>DeFi Tax Implications Explained</h1>
+            <p>Understanding yield farming, liquidity pools, and staking from a tax perspective</p>
+        </div>
+        <article class="blog-article">
+            <div class="container" style="max-width: 800px;">
+                <img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=1200&q=80" alt="DeFi" class="article-hero-image">
+                
+                <div class="article-content">
+                    <p class="article-lead">Decentralized finance has revolutionized how we interact with financial services, but it's also created a tax reporting nightmare for many investors. Here's what you need to know about DeFi taxes.</p>
+                    
+                    <h2>The DeFi Tax Challenge</h2>
+                    <p>DeFi protocols operate 24/7, generating countless micro-transactions that may each have tax implications. Unlike centralized exchanges that provide tax documents, DeFi platforms leave users to figure out their own reporting.</p>
+                    
+                    <h2>Liquidity Provision</h2>
+                    <p>When you provide liquidity to a decentralized exchange like Uniswap, you're exchanging your tokens for LP (liquidity provider) tokens. This exchange is likely a taxable event, triggering capital gains or losses on your original tokens.</p>
+                    
+                    <p>When you withdraw liquidity, you're exchanging your LP tokens back for the underlying assets—another taxable event. The difference in value determines your gain or loss.</p>
+                    
+                    <div class="article-callout warning">
+                        <h4>⚠️ Impermanent Loss</h4>
+                        <p>Impermanent loss is not directly tax-deductible. The loss is only realized for tax purposes when you withdraw your liquidity.</p>
+                    </div>
+                    
+                    <h2>Yield Farming</h2>
+                    <p>Rewards earned from yield farming are generally treated as ordinary income at the fair market value when received. This applies to governance tokens, fee rewards, and any other tokens earned through participation.</p>
+                    
+                    <p>When you later sell or trade those reward tokens, you'll recognize a capital gain or loss based on the difference between your income basis and the sale price.</p>
+                    
+                    <h2>Staking Rewards</h2>
+                    <p>The IRS has indicated that staking rewards are taxable as income when received. However, there's ongoing debate about whether rewards should be taxed when earned or when they become accessible.</p>
+                    
+                    <p>Until clearer guidance emerges, the conservative approach is to report staking rewards as income when received, at fair market value.</p>
+                    
+                    <h2>Record-Keeping for DeFi</h2>
+                    <p>Maintaining accurate records is crucial and challenging for DeFi users. Consider using specialized crypto tax software that can connect to your wallets and parse DeFi transactions automatically.</p>
+                    
+                    <ul class="article-list">
+                        <li>Export transaction history from blockchain explorers</li>
+                        <li>Screenshot or record all significant transactions</li>
+                        <li>Track the fair market value at the time of each transaction</li>
+                        <li>Keep records of gas fees paid (these may be deductible)</li>
+                    </ul>
+                    
+                    <div class="article-cta">
+                        <h3>DeFi Taxes Got You Stressed?</h3>
+                        <p>Our team specializes in DeFi tax preparation. We can help you make sense of complex transactions and ensure compliance.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="article-author">
+                    <div class="author-avatar" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=80') center/cover no-repeat;"></div>
+                    <div class="author-info">
+                        <h4>Long Nguyen, CPA</h4>
+                        <p>Certified cryptocurrency tax specialist with 15+ years of accounting experience. Passionate about helping modern investors navigate complex tax situations.</p>
+                    </div>
+                </div>
+                
+                <div class="article-nav">
+                    <a href="#" class="btn btn-secondary" onclick="showPage('blog'); return false;">← Back to Resources</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Blog Article: Year-End Tax Planning -->
+    <div id="page-blog-yearend" class="page">
+        <div class="page-header" style="background: linear-gradient(135deg, #5c4033 0%, #7a5a45 50%, #96735a 100%);">
+            <div class="blog-article-meta">
+                <span class="blog-tag" style="background: var(--primary); color: var(--dark);">Personal Finance</span>
+                <span style="margin-left: 1rem; opacity: 0.8;">December 20, 2024 • 9 min read</span>
+            </div>
+            <h1>Year-End Tax Planning Checklist</h1>
+            <p>Essential moves to make before December 31st to optimize your tax situation</p>
+        </div>
+        <article class="blog-article">
+            <div class="container" style="max-width: 800px;">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80" alt="Tax Planning" class="article-hero-image">
+                
+                <div class="article-content">
+                    <p class="article-lead">The end of the year is your last chance to make moves that impact your current year's tax bill. Here's a comprehensive checklist of strategies to consider before December 31st.</p>
+                    
+                    <h2>Maximize Retirement Contributions</h2>
+                    <p>If you haven't maxed out your retirement contributions, now's the time. For 2024, you can contribute up to $23,000 to a 401(k) ($30,500 if you're 50 or older) and $7,000 to an IRA ($8,000 if 50+).</p>
+                    
+                    <p>These contributions reduce your taxable income dollar-for-dollar (for traditional accounts) and compound tax-free for years to come.</p>
+                    
+                    <div class="article-callout">
+                        <h4>💡 Pro Tip</h4>
+                        <p>Self-employed? You may be able to contribute up to $69,000 to a Solo 401(k) or SEP IRA. That's a significant tax deduction!</p>
+                    </div>
+                    
+                    <h2>Tax-Loss Harvesting</h2>
+                    <p>Review your investment portfolio for positions with unrealized losses. Selling these before year-end allows you to use the losses to offset capital gains and up to $3,000 of ordinary income.</p>
+                    
+                    <p>Be mindful of the wash sale rule—you cannot repurchase substantially identical securities within 30 days before or after the sale.</p>
+                    
+                    <h2>Charitable Giving</h2>
+                    <p>Charitable contributions can provide significant tax benefits, especially if you itemize deductions. Consider donating appreciated securities instead of cash—you'll avoid capital gains tax while still deducting the full fair market value.</p>
+                    
+                    <p>If you're over 70½, consider a Qualified Charitable Distribution (QCD) from your IRA. You can donate up to $100,000 directly to charity, satisfying your Required Minimum Distribution without increasing your taxable income.</p>
+                    
+                    <h2>Year-End Checklist</h2>
+                    <ul class="article-list">
+                        <li>✓ Maximize 401(k) and IRA contributions</li>
+                        <li>✓ Review portfolio for tax-loss harvesting opportunities</li>
+                        <li>✓ Make charitable contributions</li>
+                        <li>✓ Pay Q4 estimated taxes if needed</li>
+                        <li>✓ Use remaining FSA/HSA funds</li>
+                        <li>✓ Gather documents for crypto transactions</li>
+                        <li>✓ Review business expenses for deductions</li>
+                        <li>✓ Consider bunching deductions if near standard deduction threshold</li>
+                        <li>✓ Evaluate Roth conversion opportunities</li>
+                        <li>✓ Review withholding for accuracy</li>
+                    </ul>
+                    
+                    <h2>Don't Wait Until April</h2>
+                    <p>Many tax-saving strategies must be implemented before December 31st—they can't be done retroactively when you file your return. Taking action now gives you more control over your tax outcome.</p>
+                    
+                    <div class="article-cta">
+                        <h3>Need Year-End Planning Help?</h3>
+                        <p>Schedule a year-end tax planning session to identify opportunities specific to your situation.</p>
+                        <a href="#" class="btn btn-primary" onclick="showPage('contact'); return false;">Schedule Consultation</a>
+                    </div>
+                </div>
+                
+                <div class="article-author">
+                    <div class="author-avatar" style="background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&q=80') center/cover no-repeat;"></div>
+                    <div class="author-info">
+                        <h4>Long Nguyen, CPA</h4>
+                        <p>Certified cryptocurrency tax specialist with 15+ years of accounting experience. Passionate about helping modern investors navigate complex tax situations.</p>
+                    </div>
+                </div>
+                
+                <div class="article-nav">
+                    <a href="#" class="btn btn-secondary" onclick="showPage('blog'); return false;">← Back to Resources</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" onclick="showPage('home')" style="font-size: 1.75rem;">Nguyen<span>.</span></a>
+                <p>Modern financial advisory for modern investors. Crypto, real estate, small business, and personal finance expertise under one roof.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+            <div>
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('service', 'crypto')">Crypto Tax</a></li>
+                    <li><a href="#" onclick="showPage('service', 'realestate')">Real Estate</a></li>
+                    <li><a href="#" onclick="showPage('service', 'business')">Small Business</a></li>
+                    <li><a href="#" onclick="showPage('service', 'gaming')">Gaming Tax</a></li>
+                    <li><a href="#" onclick="showPage('service', 'personal')">Personal Finance</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showPage('blog')">Blog & Insights</a></li>
+                    <li><a href="#">Tax Guides</a></li>
+                    <li><a href="#">Calculators</a></li>
+                    <li><a href="https://app.taxdome.com" target="_blank">Client Portal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p style="color: var(--gray-400); margin-bottom: 1rem; font-size: 0.9375rem;">Get tax tips and financial insights delivered to your inbox.</p>
+                <div class="footer-newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Nguyen Modern Asset Advisory. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Disclosures</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Guide Download Modal -->
+    <div class="modal-overlay" id="guideModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="guideModalTitle">Download Free Guide</h3>
+                <button class="modal-close" onclick="closeModal('guideModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-preview">
+                    <div class="guide-cover" id="guideCover">📘</div>
+                    <div class="guide-info">
+                        <h4 id="guideTitle">Crypto Tax Guide 2025</h4>
+                        <p id="guideDescription">Everything you need to know about reporting cryptocurrency on your taxes.</p>
+                        <ul class="guide-features" id="guideFeatures">
+                            <li>IRS reporting requirements</li>
+                            <li>DeFi & NFT taxation</li>
+                            <li>Record-keeping tips</li>
+                            <li>Common mistakes to avoid</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="download-form">
+                    <p style="font-weight: 600; margin-bottom: 1rem;">Enter your email to receive the free guide:</p>
+                    <div class="form-group">
+                        <input type="text" class="form-input" placeholder="Your name" id="guideFormName">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Your email" id="guideFormEmail">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('guideModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="downloadGuide()">Download Guide</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Calculator Modal -->
+    <div class="modal-overlay" id="calculatorModal">
+        <div class="modal" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3 id="calcModalTitle">Calculator</h3>
+                <button class="modal-close" onclick="closeModal('calculatorModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="calculatorBody">
+                <!-- Calculator content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Service content data
+        
+        const serviceContent = {
+            crypto: {
+                title: 'Crypto Tax Services',
+                subtitle: 'Comprehensive tax and accounting solutions for cryptocurrency investors',
+                breadcrumb: 'Crypto Tax',
+                description: 'Our crypto tax services cover every aspect of digital asset taxation, from basic Bitcoin trades to complex DeFi interactions, staking rewards, airdrops, and NFT transactions. We stay current with the rapidly evolving regulatory landscape to ensure your compliance and optimization.',
+                heroClass: 'service-hero-crypto'
+            },
+            realestate: {
+                title: 'Real Estate Tax Services',
+                subtitle: 'Strategic tax planning for property investors and landlords',
+                breadcrumb: 'Real Estate',
+                description: 'From rental property optimization to 1031 exchanges, cost segregation studies, and investment entity structuring, we help real estate investors minimize taxes and maximize returns across their entire portfolio.',
+                heroClass: 'service-hero-realestate'
+            },
+            business: {
+                title: 'Small Business Services',
+                subtitle: 'Complete accounting and tax solutions for entrepreneurs',
+                breadcrumb: 'Small Business',
+                description: 'We provide end-to-end financial services for small businesses including entity selection, bookkeeping, payroll, tax planning, and strategic advisory. Whether you\'re just starting out or scaling up, we\'ve got you covered.',
+                heroClass: 'service-hero-business'
+            },
+            gaming: {
+                title: 'Gaming & Creator Tax',
+                subtitle: 'Specialized services for streamers, esports pros, and content creators',
+                breadcrumb: 'Gaming Tax',
+                description: 'The creator economy has unique tax challenges—from multi-platform income to equipment depreciation, sponsorship deals, and international revenue. We speak your language and understand your business model.',
+                heroClass: 'service-hero-gaming'
+            },
+            personal: {
+                title: 'Personal Finance',
+                subtitle: 'Comprehensive financial planning for individuals and families',
+                breadcrumb: 'Personal Finance',
+                description: 'Beyond tax preparation, we offer holistic financial planning including retirement strategy, investment allocation, tax-efficient wealth building, and estate planning considerations. Your complete financial picture, optimized.',
+                heroClass: 'service-hero-personal'
+            }
+        };
+
+        // Page navigation
+        function showPage(pageId, serviceType = null) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show requested page
+            const pageEl = document.getElementById('page-' + pageId);
+            if (pageEl) {
+                pageEl.classList.add('active');
+            }
+
+            // Update nav active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Update service page content if applicable
+            if (pageId === 'service') {
+                const type = serviceType || 'crypto';
+                const content = serviceContent[type];
+
+                if (content) {
+                    document.getElementById('service-title').textContent = content.title;
+                    document.getElementById('service-subtitle').textContent = content.subtitle;
+                    document.getElementById('service-breadcrumb').textContent = content.breadcrumb;
+                    document.getElementById('service-description').textContent = content.description;
+
+                    const header = document.getElementById('service-header');
+                    if (header) {
+                        header.className = 'page-header ' + content.heroClass;
+                    }
+                }
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            return false;
+        }
+
+// Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        // FAQ accordion
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            item.classList.toggle('active');
+        }
+
+        // Filter tabs
+        document.querySelectorAll('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Update active tab
+                document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Get filter value
+                const filter = this.dataset.filter;
+                
+                // Filter blog cards
+                document.querySelectorAll('.blog-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Guide data
+        const guideData = {
+            crypto: {
+                icon: '📘',
+                title: 'Crypto Tax Guide 2025',
+                description: 'Everything you need to know about reporting cryptocurrency on your taxes.',
+                features: ['IRS reporting requirements', 'DeFi & NFT taxation', 'Record-keeping tips', 'Common mistakes to avoid', 'Tax-loss harvesting strategies']
+            },
+            realestate: {
+                icon: '📗',
+                title: 'Real Estate Tax Checklist',
+                description: 'A comprehensive checklist for real estate investors to maximize deductions.',
+                features: ['Deductible expenses list', '1031 exchange basics', 'Depreciation strategies', 'Rental income reporting', 'Property tax deductions']
+            },
+            business: {
+                icon: '📙',
+                title: 'Small Business Deductions',
+                description: 'Don\'t miss these commonly overlooked deductions for small business owners.',
+                features: ['Home office deduction', 'Vehicle expenses', 'Equipment depreciation', 'Health insurance deductions', 'Retirement contributions']
+            }
+        };
+        
+        // Open guide modal
+        function openGuideModal(guideType) {
+            const guide = guideData[guideType];
+            document.getElementById('guideCover').textContent = guide.icon;
+            document.getElementById('guideTitle').textContent = guide.title;
+            document.getElementById('guideDescription').textContent = guide.description;
+            document.getElementById('guideModalTitle').textContent = 'Download: ' + guide.title;
+            
+            const featuresList = document.getElementById('guideFeatures');
+            featuresList.innerHTML = guide.features.map(f => `<li>${f}</li>`).join('');
+            
+            document.getElementById('guideModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Download guide (simulated)
+        function downloadGuide() {
+            const name = document.getElementById('guideFormName').value;
+            const email = document.getElementById('guideFormEmail').value;
+            
+            if (!name || !email) {
+                alert('Please enter your name and email to download the guide.');
+                return;
+            }
+            
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Simulate download
+            alert('Thank you, ' + name + '! Your guide has been sent to ' + email + '. Check your inbox!');
+            closeModal('guideModal');
+            document.getElementById('guideFormName').value = '';
+            document.getElementById('guideFormEmail').value = '';
+        }
+        
+        // Calculator HTML templates
+        const calculatorTemplates = {
+            crypto: `
+                <p style="margin-bottom: 1.5rem; color: var(--gray-600);">Calculate your cryptocurrency capital gains or losses.</p>
+                <div class="calculator-container">
+                    <div class="calc-row">
+                        <div>
+                            <label class="calc-label">Purchase Price ($)</label>
+                            <input type="number" class="calc-input" id="cryptoPurchase" placeholder="10000" value="10000">
+                        </div>
+                        <div>
+                            <label class="calc-label">Sale Price ($)</label>
+                            <input type="number" class="calc-input" id="cryptoSale" placeholder="15000" value="15000">
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div>
+                            <label class="calc-label">Amount of Coins</label>
+                            <input type="number" class="calc-input" id="cryptoAmount" placeholder="1" value="1" step="0.01">
+                        </div>
+                        <div>
+                            <label class="calc-label">Holding Period</label>
+                            <select class="calc-input" id="cryptoHolding">
+                                <option value="short">Short-term (&lt; 1 year)</option>
+                                <option value="long">Long-term (&gt; 1 year)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calculateCrypto()">Calculate Gain/Loss</button>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">Estimated Capital Gain/Loss</div>
+                    <div class="calc-result-value" id="cryptoResult">$0.00</div>
+                    <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.7;" id="cryptoTaxNote">Enter values and click calculate</p>
+                </div>
+            `,
+            roi: `
+                <p style="margin-bottom: 1.5rem; color: var(--gray-600);">Calculate your return on investment for any asset.</p>
+                <div class="calculator-container">
+                    <div class="calc-row">
+                        <div>
+                            <label class="calc-label">Initial Investment ($)</label>
+                            <input type="number" class="calc-input" id="roiInitial" placeholder="10000" value="10000">
+                        </div>
+                        <div>
+                            <label class="calc-label">Current Value ($)</label>
+                            <input type="number" class="calc-input" id="roiCurrent" placeholder="12500" value="12500">
+                        </div>
+                    </div>
+                    <div class="calc-row full">
+                        <div>
+                            <label class="calc-label">Investment Period (years)</label>
+                            <input type="number" class="calc-input" id="roiYears" placeholder="2" value="2" step="0.5">
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calculateROI()">Calculate ROI</button>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">Total Return on Investment</div>
+                    <div class="calc-result-value" id="roiResult">0%</div>
+                    <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.7;" id="roiAnnual">Annualized: 0%</p>
+                </div>
+            `,
+            tax: `
+                <p style="margin-bottom: 1.5rem; color: var(--gray-600);">Estimate your federal income tax liability.</p>
+                <div class="calculator-container">
+                    <div class="calc-row full">
+                        <div>
+                            <label class="calc-label">Annual Taxable Income ($)</label>
+                            <input type="number" class="calc-input" id="taxIncome" placeholder="75000" value="75000">
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div>
+                            <label class="calc-label">Filing Status</label>
+                            <select class="calc-input" id="taxStatus">
+                                <option value="single">Single</option>
+                                <option value="married">Married Filing Jointly</option>
+                                <option value="head">Head of Household</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="calc-label">State</label>
+                            <select class="calc-input" id="taxState">
+                                <option value="0">No State Tax (TX, FL, etc.)</option>
+                                <option value="0.05">~5% State Tax</option>
+                                <option value="0.07">~7% State Tax</option>
+                                <option value="0.10">~10% State Tax</option>
+                                <option value="0.13">~13% State Tax (CA)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="calc-btn" onclick="calculateTax()">Estimate Tax</button>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">Estimated Total Tax</div>
+                    <div class="calc-result-value" id="taxResult">$0</div>
+                    <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.7;" id="taxRate">Effective rate: 0%</p>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--gray-500); margin-top: 1rem; text-align: center;">* This is a simplified estimate. Actual taxes may vary based on deductions, credits, and other factors.</p>
+            `
+        };
+        
+        // Open calculator modal
+        function openCalculator(calcType) {
+            const titles = {
+                crypto: 'Crypto Gain/Loss Calculator',
+                roi: 'ROI Calculator',
+                tax: 'Tax Estimator'
+            };
+            
+            document.getElementById('calcModalTitle').textContent = titles[calcType];
+            document.getElementById('calculatorBody').innerHTML = calculatorTemplates[calcType];
+            document.getElementById('calculatorModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Crypto calculator
+        function calculateCrypto() {
+            const purchase = parseFloat(document.getElementById('cryptoPurchase').value) || 0;
+            const sale = parseFloat(document.getElementById('cryptoSale').value) || 0;
+            const amount = parseFloat(document.getElementById('cryptoAmount').value) || 1;
+            const holding = document.getElementById('cryptoHolding').value;
+            
+            const gainLoss = (sale - purchase) * amount;
+            const resultEl = document.getElementById('cryptoResult');
+            const noteEl = document.getElementById('cryptoTaxNote');
+            
+            resultEl.textContent = '$' + gainLoss.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            
+            if (gainLoss >= 0) {
+                resultEl.className = 'calc-result-value positive';
+                const taxRate = holding === 'long' ? '0-20%' : '10-37%';
+                noteEl.textContent = `${holding === 'long' ? 'Long-term' : 'Short-term'} capital gains tax rate: ${taxRate}`;
+            } else {
+                resultEl.className = 'calc-result-value negative';
+                noteEl.textContent = 'Capital losses can offset gains and up to $3,000 of ordinary income';
+            }
+        }
+        
+        // ROI calculator
+        function calculateROI() {
+            const initial = parseFloat(document.getElementById('roiInitial').value) || 0;
+            const current = parseFloat(document.getElementById('roiCurrent').value) || 0;
+            const years = parseFloat(document.getElementById('roiYears').value) || 1;
+            
+            const totalROI = ((current - initial) / initial) * 100;
+            const annualROI = (Math.pow(current / initial, 1 / years) - 1) * 100;
+            
+            const resultEl = document.getElementById('roiResult');
+            resultEl.textContent = totalROI.toFixed(2) + '%';
+            resultEl.className = totalROI >= 0 ? 'calc-result-value positive' : 'calc-result-value negative';
+            
+            document.getElementById('roiAnnual').textContent = `Annualized return: ${annualROI.toFixed(2)}% per year`;
+        }
+        
+        // Tax calculator (simplified 2024 brackets)
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('taxIncome').value) || 0;
+            const status = document.getElementById('taxStatus').value;
+            const stateRate = parseFloat(document.getElementById('taxState').value) || 0;
+            
+            // 2024 Federal Tax Brackets (simplified)
+            let brackets;
+            if (status === 'single') {
+                brackets = [
+                    { limit: 11600, rate: 0.10 },
+                    { limit: 47150, rate: 0.12 },
+                    { limit: 100525, rate: 0.22 },
+                    { limit: 191950, rate: 0.24 },
+                    { limit: 243725, rate: 0.32 },
+                    { limit: 609350, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ];
+            } else if (status === 'married') {
+                brackets = [
+                    { limit: 23200, rate: 0.10 },
+                    { limit: 94300, rate: 0.12 },
+                    { limit: 201050, rate: 0.22 },
+                    { limit: 383900, rate: 0.24 },
+                    { limit: 487450, rate: 0.32 },
+                    { limit: 731200, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ];
+            } else { // head of household
+                brackets = [
+                    { limit: 16550, rate: 0.10 },
+                    { limit: 63100, rate: 0.12 },
+                    { limit: 100500, rate: 0.22 },
+                    { limit: 191950, rate: 0.24 },
+                    { limit: 243700, rate: 0.32 },
+                    { limit: 609350, rate: 0.35 },
+                    { limit: Infinity, rate: 0.37 }
+                ];
+            }
+            
+            let federalTax = 0;
+            let prevLimit = 0;
+            
+            for (const bracket of brackets) {
+                if (income > prevLimit) {
+                    const taxableInBracket = Math.min(income, bracket.limit) - prevLimit;
+                    federalTax += taxableInBracket * bracket.rate;
+                    prevLimit = bracket.limit;
+                } else {
+                    break;
+                }
+            }
+            
+            const stateTax = income * stateRate;
+            const totalTax = federalTax + stateTax;
+            const effectiveRate = (totalTax / income) * 100;
+            
+            document.getElementById('taxResult').textContent = '$' + totalTax.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            document.getElementById('taxRate').textContent = `Effective rate: ${effectiveRate.toFixed(1)}% (Federal: $${federalTax.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}, State: $${stateTax.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})})`;
+        }
+        
+        // Blog search
+        function searchBlog() {
+            const query = document.getElementById('blogSearch').value.toLowerCase();
+            document.querySelectorAll('.blog-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
